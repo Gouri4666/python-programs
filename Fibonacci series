@@ -1,0 +1,11 @@
+num=int(input("Enter a number: "))
+a=0
+b=1
+if num>0:
+    print("Fibonacci sequence:",end=" ")
+    for i in range(num):
+        print(a,end=' ')
+        c=a+b
+        a=b
+        b=c
+    print("\n",num,"th Fibonacci number is:",a)
