@@ -1,0 +1,30 @@
+n = int(input("Enter number of students: "))
+students = []
+
+for _ in range(n):
+    name = input("Enter name: ")
+    score = float(input("Enter score: "))
+    students.append([name, score])
+
+# Find the lowest and second lowest scores
+lowest = students[0][1]
+second_lowest = None
+
+for name, score in students:
+    if score < lowest:
+        lowest = score
+
+for name, score in students:
+    if score > lowest:
+        if second_lowest is None or score < second_lowest:
+            second_lowest = score
+
+# Print names with second lowest score in alphabetical order
+second_lowest_names = []
+for name, score in students:
+    if score == second_lowest:
+        second_lowest_names.append(name)
+
+second_lowest_names.sort()
+for name in second_lowest_names:
+    print(name)
